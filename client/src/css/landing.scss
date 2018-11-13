@@ -2,7 +2,10 @@
 
 .rw-wrapper{
     font-family: $karla-font;
-    padding: 50px;
+    //width: 100vw;
+    //padding: 50px;
+    overflow-x: hidden;
+    
 }
 
 .rw-sentence{
@@ -12,29 +15,32 @@
 
 .rw-sentence span{
     color: $landing-color;
-    white-space: nowrap;
-    font-size: 200%;
+    //white-space: nowrap;
+    font-size: 300%;
     font-weight: normal;
 }
 
 .rw-words{
     display: inline;
-    text-indent: 10px;
 }
 
 .rw-words span{
-    position: fixed;
+    position: absolute;
     opacity: 0;
     overflow: hidden;
-    width: 100%;
+    padding: 0 1%;
 }
 
 .rw-words-1 span{
-    text-align: left;
+    text-align: right;
+    right: 50vw;
+    bottom: 50vh;
     animation: rotateWordsFirst 18s linear infinite 0s;
 }
 .rw-words-2 span{
     text-align: left;
+    left: 50vw;
+    bottom: 50vh;
     animation: rotateWordsSecond 6s linear infinite 0s;
 }
 
@@ -69,6 +75,7 @@
 .rw-words-2 span:nth-child(6) { 
     animation-delay: 5s;
 }
+
 
 @keyframes rotateWordsFirst {
     0% { opacity: 1; animation-timing-function: step-start; width: 0px; }

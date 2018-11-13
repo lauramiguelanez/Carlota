@@ -24,7 +24,6 @@ export default class LandingAnimation extends Component {
             <span>I research</span>
             <span>I write</span>
           </div>
-          <br/>
           <div className="rw-words rw-words-2">
             <span>architecture</span>
             <span>language</span>
