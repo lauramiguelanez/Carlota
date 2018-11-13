@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 @import "variables.scss";
 @import "mixins.scss";
 
 body {
   margin: 0;
   padding: 0;
-  font-family: $karla-font, sans-serif;
+  font-family: $main-font, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $primary-color;
