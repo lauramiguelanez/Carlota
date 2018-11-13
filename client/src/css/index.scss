@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+@import "variables.scss";
+@import "mixins.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $karla-font, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $primary-color;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

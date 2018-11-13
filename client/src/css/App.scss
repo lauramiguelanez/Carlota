@@ -1,0 +1,25 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+main {
+  display: flex;
+  //min-height: 70vh;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  flex: 1 0;
+}
+.grower {
+  flex-grow: 5;
+  min-height: 5px;
+}
+.fix-top {
+  flex: 0 0 $nav-height;
+}
+.fix-bottom {
+  flex: 0 0 $nav-height;
+}
+
+footer {
+  background-color: $background-color;
+}

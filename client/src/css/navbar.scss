@@ -1,0 +1,38 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.nav-style {
+  color: $primary-color;
+  background-color: $background-color;
+  z-index: 3;
+  height: $nav-height;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 100vw;
+  border-radius: 0px;
+  & ul {
+    //display: inline;
+  }
+  & li {
+    display: inline;
+    text-decoration: none;
+  }
+  a {
+    color: $accent-color;
+  }
+}
+
+.nav-width {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#top-nav {
+  position: fixed;
+  top: 0;
+  padding: 0 30px;
+}
