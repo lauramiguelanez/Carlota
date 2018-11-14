@@ -53,9 +53,6 @@ export default class LandingAnimation extends Component {
             <p className="landing-random object">{object}</p>
           </div>
         </div>
-        {/* <button className="lang-button" onMouseOver={e => this.changeLang(e)}>
-          LANG
-        </button> */}
       </section>
     );
   }

@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-//import { Switch, Route } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import "./css/App.scss";
 
 import Navbar from "./components/Navbar";
 import LandingAnimation from "./components/LandingAnimation";
+import About from "./components/About";
+import UploadProject from "./components/UploadProject";
+
 
 class App extends Component {
   constructor() {
@@ -21,11 +24,13 @@ class App extends Component {
         </header>
         <div className="fix-top"></div>
         <main>
-          <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/>
-          {/* <Switch>
-            <Route exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/>  
-            <Route exact path='/about' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/>  
-          </Switch> */}
+          <BrowserRouter>
+            <Switch>
+              <Route exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/>  
+              <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
+              <Route exact path='/upload' render={() => <UploadProject newPage={()=>{this.setState({page:"Upload"})}}/> }/>  
+            </Switch>
+          </BrowserRouter>
         </main>
         <div className="fix-bottom"></div>
         <footer>

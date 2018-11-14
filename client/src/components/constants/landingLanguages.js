@@ -48,8 +48,59 @@ const actionsENG = [
     "la investigación",
     "textos"
   ];
+
+  const actionsSWE = [
+    "Jag bygger ",
+    "Jag översätter ",
+    "Jag [curate]  ",
+    "Jag ifrågasätter ",
+    "Jag forskar ",
+    "Jag skriver "
+  ];
+  const objectsSWE = [
+    "arkitektur",
+    "språk",
+    "konst",
+    "kön",
+    "forskning",
+    "texter"
+  ];
   
-  const ActionLangList = [actionsENG, actionsFRN, actionsSPA];
-  const ObjectLangList = [objectsENG, objectsFRN, objectsSPA];
+  const actionsITA = [
+    "Costruisco ",
+    "Traduco ",
+    "Curo ",
+    "M'interrogo ",
+    "Scrivo ",
+    "Scrivo "
+  ];
+  const objectsITA = [
+    "",
+    "la lingua",
+    "l'arte",
+    "sul genere",
+    "l'architettura",
+    "testi"
+  ];
+  
+  const actionsCAT = [
+    "Construeixo ",
+    "Tradueixo ",
+    "Comissari ",
+    "Qüestiono ",
+    "Investigo ",
+    "Escric "
+  ];
+  const objectsCAT = [
+    "arquitectura",
+    "la llengua",
+    "l'art",
+    "el gènere",
+    "l'investigació",
+    "textos"
+  ];
+  
+  const ActionLangList = [actionsENG, actionsFRN, actionsSPA, actionsSWE, actionsITA, actionsCAT];
+  const ObjectLangList = [objectsENG, objectsFRN, objectsSPA, objectsSWE, objectsITA, objectsCAT];
 
   exports.langList = {ActionLangList, ObjectLangList};
