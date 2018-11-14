@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter, Router } from "react-router-dom";
 import "./css/App.scss";
 
 import Navbar from "./components/Navbar";
@@ -18,25 +18,25 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="header">
-          <Navbar/>
-        </header>
-        <div className="fix-top"></div>
-        <main>
-          <BrowserRouter>
-            <Switch>
-              <Route exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/>  
-              <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
-              <Route exact path='/upload' render={() => <UploadProject newPage={()=>{this.setState({page:"Upload"})}}/> }/>  
-            </Switch>
-          </BrowserRouter>
-        </main>
-        <div className="fix-bottom"></div>
-        <footer>
+      <BrowserRouter>
+        <div className="App">
+          <header className="header">
+            <Navbar/>
+          </header>
+          <div className="fix-top"></div>
+          <main>
+              <Switch>
+                <Route exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/>  
+                <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
+                <Route exact path='/upload' render={() => <UploadProject newPage={()=>{this.setState({page:"Upload"})}}/> }/>  
+              </Switch>
+          </main>
+          <div className="fix-bottom"></div>
+          <footer>
 
-        </footer>
-      </div>
+          </footer>
+        </div>
+      </BrowserRouter>
     );
   }
 }

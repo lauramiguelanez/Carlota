@@ -1,23 +1,26 @@
-import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link, BrowserRouter, NavLink } from "react-router-dom";
 import "../css/navbar.scss";
 
 export default class Navbar extends Component {
-    constructor(props) {
-      super(props);
-      this.state = { loggedInUser: null };
-    }
-  
-    render() {
-        return (
-            <nav className="nav-style" id="top-nav" role="navigation" aria-label="main navigation">
-              <div className="nav-width">
-              <h2 className="nav-link">Carlota Mir</h2>
-                {/* <li><Link to='/'>Home</Link></li>
-                <li><Link to='/about'>Carlota</Link></li> */}
-              </div>
-            </nav>
-        )
-    }
+  constructor(props) {
+    super(props);
+    this.state = { loggedInUser: null };
+  }
+
+  render() {
+    return (
+      <nav className="nav-style" id="top-nav" role="navigation">
+        <div className="nav-width">
+          <BrowserRouter>
+            <h2 className="nav-link">
+              <NavLink to="/about">Carlota Mir</NavLink>
+            </h2>
+            {/* <li><NavLink to='/'>Home</NavLink></li>
+                <li><NavLink to='/about'>Carlota</NavLink></li> */}
+          </BrowserRouter>
+        </div>
+      </nav>
+    );
+  }
 }
-  

@@ -16,20 +16,22 @@
   & ul {
     display: flex;
   }
-  & li {
+  & a {
     display: inline;
+    color: $primary-color;
     text-decoration: none;
     align-self: center;
     justify-self: center;
-  }
-  a {
-    color: $accent-color;
+    
+    & :hover {
+      color: $accent-color;
+    }
   }
 }
 .nav-link {
   align-self: center;
   justify-self: center;
-  text-align: center;
+  //text-align: center;
   font-family: $main-font;
   font-size: 1rem;
   font-weight: 400;
@@ -48,5 +50,4 @@
 #top-nav {
   position: fixed;
   top: 0;
-  padding: 0 30px;
 }
