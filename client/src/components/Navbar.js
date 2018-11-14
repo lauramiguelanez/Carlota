@@ -11,11 +11,11 @@ export default class Navbar extends Component {
     render() {
         return (
             <nav className="nav-style" id="top-nav" role="navigation" aria-label="main navigation">
-              <ul className="nav-width">
-              <li>Carlota</li>
+              <div className="nav-width">
+              <h2 className="nav-link">Carlota Mir</h2>
                 {/* <li><Link to='/'>Home</Link></li>
                 <li><Link to='/about'>Carlota</Link></li> */}
-              </ul>
+              </div>
             </nav>
         )
     }

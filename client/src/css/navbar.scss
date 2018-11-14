@@ -5,6 +5,8 @@
   color: $primary-color;
   background-color: $background-color;
   z-index: 3;
+  margin: 0;
+  padding: 0;
   height: $nav-height;
   display: flex;
   align-content: center;
@@ -12,20 +14,32 @@
   width: 100vw;
   border-radius: 0px;
   & ul {
-    //display: inline;
+    display: flex;
   }
   & li {
     display: inline;
     text-decoration: none;
+    align-self: center;
+    justify-self: center;
   }
   a {
     color: $accent-color;
   }
 }
+.nav-link {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  font-family: $main-font;
+  font-size: 1rem;
+  font-weight: 400;
+}
 
 .nav-width {
-  width: 100vw;
+  //width: 100vw;
   display: flex;
+  margin: 0;
+  padding: 0;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;

@@ -10,6 +10,8 @@ const projectSchema = new Schema({
     enum : ['RESEARCH', 'CURATING', 'TRASLATION'],
     default : 'RESEARCH'
   },
+  coverImage: String,
+  images: [],
   tags: [],
   description: String,
   role: {

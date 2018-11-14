@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 require("dotenv").config();
-import "../css/forms.scss";
+//import "../css/forms.scss";
 
 export default class UploadProject extends Component {
   constructor(props) {
@@ -57,10 +57,9 @@ export default class UploadProject extends Component {
     .then(() => {
       console.log("uploaded image to this space");
       console.log(this.state.img_url);
-      this.createProject(this.state.img_url, title, date, location, category, tags, description, role);
+      //this.createProject(this.state.img_url, title, date, location, category, tags, description, role);
     });
   }
-
 
   componentDidMount = () => {
     this.props.newPage();
