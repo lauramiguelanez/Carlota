@@ -39,7 +39,6 @@ export default class LandingAnimation extends Component {
     i<(ActionLangList.length-1)? i++: i=0;
 
     this.setState({ actLang: ActionLangList[i], objLang: ObjectLangList[i], lang: i });
-    this.changeSentence();
   };
 
   render() {
@@ -49,14 +48,14 @@ export default class LandingAnimation extends Component {
     return (
       <section>
         <div className="landing-wrapper">
-          <div className="landing-text">
+          <div className="landing-text" onMouseOver={e => this.changeLang(e)}>
             <p className="landing-random action">{action}</p>
             <p className="landing-random object">{object}</p>
           </div>
         </div>
-        <button className="lang-button" onClick={e => this.changeLang(e)}>
+        {/* <button className="lang-button" onMouseOver={e => this.changeLang(e)}>
           LANG
-        </button>
+        </button> */}
       </section>
     );
   }

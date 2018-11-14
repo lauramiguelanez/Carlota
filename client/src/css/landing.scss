@@ -1,35 +1,53 @@
 @import "variables.scss";
 
-section{
-    width: 90vw;
-    display: flex;
-    flex-direction: column;
+section {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
-.landing-wrapper{
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    justify-self: center;
+.landing-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-self: center;
+  padding: 20px 0;
 }
-.landing-text{
-    font-family: $main-font;
-    font-size: 4rem;
-    color: $landing-color;
+.landing-text {
+  font-family: $main-font;
+  text-align: center;
+  font-size: 3.5rem;
+  color: $landing-color;
 }
 
 .landing-random {
-    display: inline;
+  display: inline;
 }
 
 .action {
-    font-weight: 400;
+  font-weight: 400;
 }
-.object{
-    font-weight: 700;
+.object {
+  font-weight: 700;
 }
 
-.lang-button{
-    align-self: center;
-    
+.lang-button {
+  align-self: center;
+  background-color: $landing-color;
+  color: $secondary-color;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  text-align: center;
+  font-family: $main-font;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 800px) {
+    .landing-text{
+        font-size: 2rem;
+    }
 }
