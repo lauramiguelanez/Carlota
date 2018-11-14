@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
-  title: Title,
+  title: String,
   date: String,
   location: String,
   category: {
@@ -26,5 +26,5 @@ const projectSchema = new Schema({
   }
 });
 
-const Project = mongoose.model('User', projectSchema);
+const Project = mongoose.model('Project', projectSchema);
 module.exports = Project;
