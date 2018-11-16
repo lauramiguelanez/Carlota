@@ -21,21 +21,50 @@ export default class Projects extends Component {
   }
 
   getProjects = () => {
+    let projects;
     return this.service
       .get("/project")
-      .then(projects => {
+      .then(projs => {
+        projects = projs.data;
         console.log(projects);
-        //console.log(proj.data);
+        this.setState({ projectArr: projects });
       })
       .catch(error => console.log(error));
 
   }
 
   render() {
-    return (
-      <section className="all-projects">
-       <p>My projects</p>
-      </section>
-    );
+    let projects  = this.state.projectArr;
+
+
+    if (projects) {
+      projects.forEach(e => {});
+      return (
+        <section className="all-projects">
+          {projects.map(project => {
+            return (
+              <div key={project._id} className="scope-in-feed">
+                <Link to={`/project/${project._id}`}>
+                  <img
+                    className="panorama-feed"
+                    width="200px"
+                    src={project.coverImage}
+                  />
+                </Link>
+              </div>
+            );
+          })}
+        </section>
+      );
+    } else {
+      return (
+        <section className="profile-feed">
+        </section>
+      );
+    }
+
+
+
+
   }
 }
