@@ -8,7 +8,8 @@ export default class UploadProject extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedInUser: null
+      loggedInUser: null, 
+      redirect: false
     };
     this.service = axios.create({
       baseURL: `${process.env.REACT_APP_API_URL}/api`
@@ -21,12 +22,11 @@ export default class UploadProject extends Component {
   }
 
   handleChangeFile(e) {  
-    this.setState({
-      file: e.target.files[0]
-    });
+    const { name, files } = e.target;
+    this.setState({ file: e.target.files[0]});
   }
 
-  uploadImage(file) {
+  uploadImage(file, name) {
     const formData = new FormData();
     formData.append("photo", file);
     return this.service
@@ -39,14 +39,14 @@ export default class UploadProject extends Component {
       .catch(error => console.log(error));
   }
 
-  createProject = (image_url, title, date, location, category, tags, description, role) => { //faltan demas datos
-    let coverImage = { url: image_url, type: "IMAGE"};
+  createProject = (image_url, title, date, location, category, tagsTopic, tagsFormat, description, role) => { //faltan demas datos
+    let project = { coverImage: image_url, title, date, location, category, tagsTopic, tagsFormat, description, role};
+    console.log(project);
     return this.service
-      .post("/project", coverImage)
-      .then(media => {
-        console.log("CREATED NEW IMAGE:");
-        console.log(media.data);
-        this.addMediaToSpace(media.data);
+      .post("/project", project)
+      .then(proj => {
+        console.log("CREATED NEW PROJECT:");
+        console.log(proj.data);
       })
       .catch(error => console.log(error));
   };
@@ -57,7 +57,7 @@ export default class UploadProject extends Component {
     .then(() => {
       console.log("uploaded image to this space");
       console.log(this.state.img_url);
-      //this.createProject(this.state.img_url, title, date, location, category, tags, description, role);
+      this.createProject(this.state.img_url, this.state.title, this.state.date, this.state.location, this.state.category, this.state.tagsTopic, this.state.tagsFormat, this.state.description, this.state.role);
     });
   }
 
@@ -68,42 +68,50 @@ export default class UploadProject extends Component {
   render() {
     return (
       <section className="form-card">
-        <div class="field">
+        <div className="field">
           <form onSubmit={e => this.handleSubmit(e)}>
-            <div class="control">
-                <label class="label">Title</label>
+            <div className="control">
+                <label className="label">Title</label>
                 <input className="input is-primary" type="text" name="title" onChange={e => this.handleChange(e)} placeholder="My Project" />
             </div>
-            <div class="control">
-                <label class="label">Description</label>
+            <div className="control">
+                <label className="label">Description</label>
                 <input className="input is-primary" type="text" name="description" onChange={e => this.handleChange(e)} placeholder="This is an awesome project" />
             </div>
-            <div class="control">
-                <label class="label">Location</label>
+            <div className="control">
+                <label className="label">Location</label>
                 <input className="input is-primary" type="text" name="location" onChange={e => this.handleChange(e)} placeholder="Madrid, Spain" />
             </div>
-            <div class="control">
-                <label class="label">Date</label>
+            <div className="control">
+                <label className="label">Date</label>
                 <input className="input is-primary" type="date" name="date" onChange={e => this.handleChange(e)}/>
             </div>
-            <div class="control">
-                <label class="label">Tags</label>
-                <input className="input is-primary" type="text" name="tags" onChange={e => this.handleChange(e)} placeholder="Enter comma-separated tags"/>
+            <div className="control">
+                <label className="label">Tags (topic)</label>
+                <input className="input is-primary" type="text" name="tagsTopic" onChange={e => this.handleChange(e)} placeholder="Enter comma-separated tags"/>
             </div>
-            <div class="control">
-                <label class="label">Category</label>
+            <div className="control">
+                <label className="label">Tags (format)</label>
+                <input className="input is-primary" type="text" name="tagsFormat" onChange={e => this.handleChange(e)} placeholder="Enter comma-separated tags"/>
+            </div>
+            <div className="control">
+                <label className="label">Category</label>
                 <select name="category" onChange={e => this.handleChange(e)}>
                     <option value="RESEARCH">Research</option>
                     <option value="CURATING">Curating</option>
                     <option value="TRASLATION">Traslation</option>
                 </select>
             </div>
-            <div class="control">
-                <label class="label">Role</label>
+            <div className="control">
+                <label className="label">Role</label>
                 <select name="category" onChange={e => this.handleChange(e)}>
                     <option value="INDIVIDUAL">Individual</option>
                     <option value="COLABORATION">Colaboration</option>
                 </select>
+            </div>
+            <div className="control">
+              <label className="file-label">Cover image</label>
+              <input className="file-input" name="coverImage" type="file" onChange={e => this.handleChangeFile(e)} /> 
             </div>
             <button className="button is-primary" type="submit"> Upload </button>
           </form>

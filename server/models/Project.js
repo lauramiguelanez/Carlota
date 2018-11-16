@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
   title: String,
-  date: String,
+  date: Date,
   location: String,
   category: {
     type: String,
@@ -12,8 +12,10 @@ const projectSchema = new Schema({
   },
   coverImage: String,
   images: [],
-  tags: [],
+  tagsTopic: [],
+  tagsFormat: [],
   description: String,
+  externalLink: String,
   role: {
     type: String,
     enum : ['INDIVIDUAL', 'COLABORATION'],

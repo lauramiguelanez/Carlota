@@ -13,11 +13,23 @@ export default class Projects extends Component {
     this.service = axios.create({
       baseURL: `${process.env.REACT_APP_API_URL}/api`
     });
+    this.getProjects();
   }
 
   componentDidMount = () => {
     this.props.newPage();
-  };
+  }
+
+  getProjects = () => {
+    return this.service
+      .get("/project")
+      .then(projects => {
+        console.log(projects);
+        //console.log(proj.data);
+      })
+      .catch(error => console.log(error));
+
+  }
 
   render() {
     return (
