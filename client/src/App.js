@@ -7,6 +7,7 @@ import LandingAnimation from "./components/LandingAnimation";
 import About from "./components/About";
 import UploadProject from "./components/UploadProject";
 import Projects from "./components/Projects";
+import ProjectDetail from "./components/ProjectDetail";
 import Footer from "./components/Footer";
 
 
@@ -31,7 +32,8 @@ class App extends Component {
                 <Route exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/>  
                 <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
                 <Route exact path='/upload' render={() => <UploadProject newPage={()=>{this.setState({page:"Upload"})}}/> }/>  
-                <Route exact path='/projects' render={() => <Projects newPage={()=>{this.setState({page:"Projects"})}}/> }/>  
+                <Route exact path='/projects' render={() => <Projects newPage={()=>{this.setState({page:"Projects"})}} /> }/>  
+                <Route exact path='/project/:id' render={(props) => <ProjectDetail newPage={()=>{this.setState({page:"ProjectDetail"})}}{...props}/> }/>  
               </Switch>
           </main>
           <div className="fix-bottom"></div>

@@ -14,6 +14,7 @@ export default class Projects extends Component {
       baseURL: `${process.env.REACT_APP_API_URL}/api`
     });
     this.getProjects();
+    
   }
 
   componentDidMount = () => {
@@ -35,7 +36,6 @@ export default class Projects extends Component {
 
   render() {
     let projects  = this.state.projectArr;
-
 
     if (projects) {
       projects.forEach(e => {});

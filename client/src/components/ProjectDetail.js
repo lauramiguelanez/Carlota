@@ -52,8 +52,8 @@ export default class ProjectDetail extends Component {
       <h1>{title}</h1>
       <h2>{subtitle}</h2>
       <h3>{context}</h3>
-       <p>My projects</p>
-       <img height="500px" src={coverImage} alt={name} />
+       <p>{description}</p>
+       <img height="500px" src={coverImage} alt={title} />
       </section>
     );
   }
