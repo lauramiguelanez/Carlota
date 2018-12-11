@@ -8,17 +8,18 @@ export default class Footer extends Component {
     this.state = { loggedInUser: null };
   }
 
+  sendCategory = category => {
+    this.props.newFilter(category);
+  };
+
   render() {
     return (
       <nav className="nav-style" id="botom-nav" role="navigation">
         <div className="nav-width">
-          <BrowserRouter>
-            <h2 className="nav-link">
-              {/* <NavLink to="/about">Carlota Mir</NavLink> */}
-              <a href="mailto:mir.carlota@gmail.com">email</a>
-              <a href="https://www.instagram.com/carlotamir/">instagram</a>
-            </h2>
-          </BrowserRouter>
+          
+            <button onClick={e => this.sendCategory("RESEARCH")}>Research</button>
+            <button onClick={e => this.sendCategory("CURATING")}>Curating</button>
+            <button onClick={e => this.sendCategory("TRASLATION")}>Translate</button>
         </div>
       </nav>
     );

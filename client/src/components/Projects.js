@@ -21,6 +21,10 @@ export default class Projects extends Component {
     this.props.newPage();
   }
 
+  filterProjects(category) {
+    
+  }
+
   getProjects = () => {
     let projects;
     return this.service
