@@ -1,0 +1,24 @@
+
+.all-projects {
+  width: 100vw;
+  max-width: 900px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin: 0 35px;
+}
+
+.project-img-feed {
+  object-fit: cover;
+  width: 20vw;
+  height: 20vw;
+  align-content: center;
+  //border-radius: 10vw;
+}
+
+.project-in-feed {
+  align-self: center;
+  margin: 10px;
+}

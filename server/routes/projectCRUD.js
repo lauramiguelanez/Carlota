@@ -17,6 +17,13 @@ const projectCRUD = (Project, extensionFn) => {
             .then( objList => res.status(200).json(objList))
             .catch(e => next(e))
     })
+
+    router.get('/:id',(req,res,next) => {
+        const {id} = req.params;
+        Project.findById(id)
+            .then( obj => res.status(200).json(obj))
+            .catch(e => next(e))
+    })
     
     // CRUD: CREATE
     router.post('/',(req,res,next) => {
@@ -25,7 +32,6 @@ const projectCRUD = (Project, extensionFn) => {
             .then( obj => res.status(200).json(obj))
             .catch(e => next(e))
     })
-    
     
     
     // CRUD: UPDATE

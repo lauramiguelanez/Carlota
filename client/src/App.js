@@ -7,6 +7,7 @@ import LandingAnimation from "./components/LandingAnimation";
 import About from "./components/About";
 import UploadProject from "./components/UploadProject";
 import Projects from "./components/Projects";
+import Footer from "./components/Footer";
 
 
 class App extends Component {
@@ -35,7 +36,7 @@ class App extends Component {
           </main>
           <div className="fix-bottom"></div>
           <footer>
-
+            <Footer/>
           </footer>
         </div>
       </BrowserRouter>

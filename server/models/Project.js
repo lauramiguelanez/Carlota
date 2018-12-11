@@ -3,22 +3,25 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
   title: String,
-  date: Date,
-  location: String,
+  subtitle: String,
   category: {
     type: String,
     enum : ['RESEARCH', 'CURATING', 'TRASLATION'],
     default : 'RESEARCH'
   },
+  date: Date,
+  context: String,
+  organiser: String,
+  collaboratingEntitites: String,
+  description: String,
   coverImage: String,
   images: [],
   tagsTopic: [],
   tagsFormat: [],
-  description: String,
-  externalLink: String,
-  role: {
+  externalLink: [],
+  authorship: {
     type: String,
-    enum : ['INDIVIDUAL', 'COLABORATION'],
+    enum : ['INDIVIDUAL', 'COLLECTIVE', 'TRANSLATOR'],
     default : 'INDIVIDUAL'
   },
 }, {

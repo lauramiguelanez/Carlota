@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../css/content.scss";
 require("dotenv").config();
-//import "../css/content.scss";
 
 export default class Projects extends Component {
   constructor(props) {
@@ -43,10 +43,10 @@ export default class Projects extends Component {
         <section className="all-projects">
           {projects.map(project => {
             return (
-              <div key={project._id} className="scope-in-feed">
+              <div key={project._id} className="project-in-feed">
                 <Link to={`/project/${project._id}`}>
                   <img
-                    className="panorama-feed"
+                    className="project-img-feed"
                     width="200px"
                     src={project.coverImage}
                   />
