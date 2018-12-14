@@ -9,6 +9,7 @@ import UploadProject from "./components/UploadProject";
 import Projects from "./components/Projects";
 import ProjectDetail from "./components/ProjectDetail";
 import Footer from "./components/Footer";
+import Category from "./components/Category";
 
 
 class App extends Component {
@@ -28,12 +29,17 @@ class App extends Component {
           </header>
           <div className="fix-top"></div>
           <main>
-              <Switch>
-                <Route exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/>  
+              <Switch> 
+                <Route exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/> 
                 <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
+
+                <Route exact path='/curating' render={() => <Category category={'curating'} newPage={()=>{this.setState({page:"Curating"})}}/> }/> 
+                <Route exact path='/translation' render={() => <Category category={'translation'} newPage={()=>{this.setState({page:"Translation"})}}/> }/> 
+                <Route exact path='/research' render={() => <Category category={'research'} newPage={()=>{this.setState({page:"Research"})}}/> }/> 
+
                 <Route exact path='/upload' render={() => <UploadProject newPage={()=>{this.setState({page:"Upload"})}}/> }/>  
                 <Route exact path='/projects' render={() => <Projects newPage={()=>{this.setState({page:"Projects"})}} /> }/>  
-                <Route exact path='/project/:id' render={(props) => <ProjectDetail newPage={()=>{this.setState({page:"ProjectDetail"})}}{...props}/> }/>  
+                <Route path='/project/:id' render={(props) => <ProjectDetail newPage={()=>{this.setState({page:"ProjectDetail"})}}{...props}/> }/>  
               </Switch>
           </main>
           <div className="fix-bottom"></div>

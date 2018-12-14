@@ -13,8 +13,10 @@ export default class Navbar extends Component {
       <nav className="nav-style" id="top-nav" role="navigation">
         <div className="nav-width">
           <BrowserRouter>
-            <h2 className="nav-link">
-              <NavLink to="/about">Carlota Mir</NavLink>
+            <h2>
+              <NavLink className="nav-link" to="/about">About</NavLink>
+              <NavLink className="nav-link" to="/">Carlota Mir</NavLink>
+              <a className="nav-link" href="mailto:mir.carlota@gmail.com">Contact</a>
             </h2>
             {/* <li><NavLink to='/'>Home</NavLink></li>
                 <li><NavLink to='/about'>Carlota</NavLink></li> */}

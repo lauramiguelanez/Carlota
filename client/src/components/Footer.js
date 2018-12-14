@@ -16,10 +16,9 @@ export default class Footer extends Component {
     return (
       <nav className="nav-style" id="botom-nav" role="navigation">
         <div className="nav-width">
-          
-            <button onClick={e => this.sendCategory("RESEARCH")}>Research</button>
-            <button onClick={e => this.sendCategory("CURATING")}>Curating</button>
-            <button onClick={e => this.sendCategory("TRASLATION")}>Translate</button>
+            <Link className="nav-link" to="/research">Research</Link>
+            <Link className="nav-link" to="/curating">Curating</Link>
+            <Link className="nav-link" to="/translation">Translation</Link>
         </div>
       </nav>
     );
