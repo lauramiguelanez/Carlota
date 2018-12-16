@@ -100,7 +100,7 @@ const actionsENG = [
     "textos"
   ];
   
-  const ActionLangList = [actionsENG, actionsFRN, actionsSPA, actionsSWE, actionsITA, actionsCAT];
-  const ObjectLangList = [objectsENG, objectsFRN, objectsSPA, objectsSWE, objectsITA, objectsCAT];
+  const ActionLangList = [actionsENG, actionsFRN, actionsSPA/* , actionsSWE, actionsITA, actionsCAT */];
+  const ObjectLangList = [objectsENG, objectsFRN, objectsSPA/* , objectsSWE, objectsITA, objectsCAT */];
 
   exports.langList = {ActionLangList, ObjectLangList};
