@@ -30,7 +30,7 @@ class App extends Component {
           <div className="fix-top"></div>
           <main>
               <Switch> 
-                <Route exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/> 
+                <Route key='home' exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/> 
                 <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
 
                 <Route exact path='/curating' render={() => <Category category={'curating'} newPage={()=>{this.setState({page:"Curating"})}}/> }/> 
