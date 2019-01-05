@@ -31,7 +31,7 @@ class App extends Component {
           <main>
               <Switch> 
                 <Route key='home' exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/> 
-                <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
+{/*                 <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
 
                 <Route exact path='/curating' render={() => <Category category={'curating'} newPage={()=>{this.setState({page:"Curating"})}}/> }/> 
                 <Route exact path='/translation' render={() => <Category category={'translation'} newPage={()=>{this.setState({page:"Translation"})}}/> }/> 
@@ -39,7 +39,7 @@ class App extends Component {
 
                 <Route exact path='/upload' render={() => <UploadProject newPage={()=>{this.setState({page:"Upload"})}}/> }/>  
                 <Route exact path='/projects' render={() => <Projects newPage={()=>{this.setState({page:"Projects"})}} /> }/>  
-                <Route path='/project/:id' render={(props) => <ProjectDetail newPage={()=>{this.setState({page:"ProjectDetail"})}}{...props}/> }/>  
+    <Route path='/project/:id' render={(props) => <ProjectDetail newPage={()=>{this.setState({page:"ProjectDetail"})}}{...props}/> }/>   */}
               </Switch>
           </main>
           <div className="fix-bottom"></div>

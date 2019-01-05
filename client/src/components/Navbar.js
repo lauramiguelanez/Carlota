@@ -14,9 +14,9 @@ export default class Navbar extends Component {
         <div className="nav-width">
           <BrowserRouter>
             <h2>
-              <NavLink className="nav-link" to="/about">About</NavLink>
-              <NavLink className="nav-link" to="/">Carlota Mir</NavLink>
-              <a className="nav-link" href="mailto:mir.carlota@gmail.com">Contact</a>
+              {/* <NavLink className="nav-link" to="/about">About</NavLink>
+    <NavLink className="nav-link" to="/">Carlota Mir</NavLink> */}
+              <a className="nav-link" href="mailto:mir.carlota@gmail.com">Carlota Mir</a>
             </h2>
             {/* <li><NavLink to='/'>Home</NavLink></li>
                 <li><NavLink to='/about'>Carlota</NavLink></li> */}

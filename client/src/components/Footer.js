@@ -16,9 +16,10 @@ export default class Footer extends Component {
     return (
       <nav className="nav-style" id="botom-nav" role="navigation">
         <div className="nav-width">
-            <Link className="nav-link" to="/research">Research</Link>
+            {/* <Link className="nav-link" to="/research">Research</Link>
             <Link className="nav-link" to="/curating">Curating</Link>
-            <Link className="nav-link" to="/translation">Translation</Link>
+    <Link className="nav-link" to="/translation">Translation</Link> */}
+            <h2 className="nav-link">Site under construction</h2>
         </div>
       </nav>
     );
