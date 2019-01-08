@@ -22,7 +22,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <duv>
         <div className="App">
           <header className="header">
             <Navbar/>
@@ -31,9 +31,9 @@ class App extends Component {
           <main>
               <Switch> 
                 <Route key='home' exact path='/' render={() => <LandingAnimation newPage={()=>{this.setState({page:"Home"})}}/> }/> 
-{/*                 <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
+                <Route exact path='/about' render={() => <About newPage={()=>{this.setState({page:"About"})}}/> }/>  
 
-                <Route exact path='/curating' render={() => <Category category={'curating'} newPage={()=>{this.setState({page:"Curating"})}}/> }/> 
+                {/*<Route exact path='/curating' render={() => <Category category={'curating'} newPage={()=>{this.setState({page:"Curating"})}}/> }/> 
                 <Route exact path='/translation' render={() => <Category category={'translation'} newPage={()=>{this.setState({page:"Translation"})}}/> }/> 
                 <Route exact path='/research' render={() => <Category category={'research'} newPage={()=>{this.setState({page:"Research"})}}/> }/> 
 
@@ -47,7 +47,7 @@ class App extends Component {
             <Footer/>
           </footer>
         </div>
-      </BrowserRouter>
+      </duv>
     );
   }
 }

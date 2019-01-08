@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Link, BrowserRouter, NavLink } from "react-router-dom";
-import "../css/navbar.scss";
+import React, { Component } from 'react';
+import { Link, BrowserRouter, NavLink } from 'react-router-dom';
+import '../css/navbar.scss';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -12,15 +12,14 @@ export default class Navbar extends Component {
     return (
       <nav className="nav-style" id="top-nav" role="navigation">
         <div className="nav-width">
-          <BrowserRouter>
-            <h2>
-              {/* <NavLink className="nav-link" to="/about">About</NavLink>
-    <NavLink className="nav-link" to="/">Carlota Mir</NavLink> */}
-              <a className="nav-link" href="mailto:mir.carlota@gmail.com">Carlota Mir</a>
-            </h2>
-            {/* <li><NavLink to='/'>Home</NavLink></li>
-                <li><NavLink to='/about'>Carlota</NavLink></li> */}
-          </BrowserRouter>
+          <NavLink className="nav-link" to="/about">
+            About
+          </NavLink>
+          <NavLink className="nav-link" to="/">
+            Carlota Mir
+          </NavLink>
+          {/* <NavLink to="/about">Carlota</NavLink> */}
+          <a className="nav-link" href="mailto:mir.carlota@gmail.com">Contact</a>
         </div>
       </nav>
     );
