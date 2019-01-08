@@ -14,7 +14,12 @@ export default class Category extends Component {
     this.service = axios.create({
       baseURL: `${process.env.REACT_APP_API_URL}/api`
     });
-    this.getProjects(this.props.category);   
+    this.getProjects(this.state.category);   
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ ...this.state, category: nextProps["category"] });
+    this.getProjects(this.state.category);
   }
 
   componentDidMount = () => {
