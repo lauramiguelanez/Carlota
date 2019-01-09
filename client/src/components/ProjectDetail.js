@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-require("dotenv").config();
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+require('dotenv').config();
 //import "../css/project.scss";
 
 export default class ProjectDetail extends Component {
@@ -40,8 +40,12 @@ export default class ProjectDetail extends Component {
 
   componentDidMount = () => {
     this.props.newPage();
-    let id = this.props.match.params.id;
-    this.setState({ projectID: id });
+    let id;
+    if (this.props.id) {
+      id = this.props.id;
+    } else if (this.props.match.params.id) {
+      id = this.props.match.params.id;
+    } else this.setState({ projectID: id });
     this.getProject(id);
   };
 
@@ -59,13 +63,18 @@ export default class ProjectDetail extends Component {
       authorship
     } = this.state;
 
+    let year = date? new Date(date).getFullYear() : "";
+
     return (
-      <section className="all-projects">
-        <h1>{title}</h1>
-        <h2>{subtitle}</h2>
-        <h3>{context}</h3>
-        <p>{description}</p>
-        <img height="500px" src={coverImage} alt={title} />
+      <section className="project-detail">
+        <h1 className="project-title">{title}</h1>
+        <h2 className="project-subtitle">{subtitle}</h2>
+        <p className="project-author">Authorship: {authorship}</p>
+        <h3 lassName="project-context">{context}</h3>
+        <img className="project-img" src={coverImage} alt={title} />
+        <p className="project-description" >{description}</p>
+        <h3 className="project-category">{category} - {year}</h3>
+        <p className="project-tags">{tagsTopic}, {tagsFormat}</p>
       </section>
     );
   }

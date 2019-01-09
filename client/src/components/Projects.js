@@ -49,11 +49,12 @@ export default class Projects extends Component {
             return (
               <div key={project._id} className="project-in-feed">
                 <Link to={`/project/${project._id}`}>
-                  <img
+                  /* <img
                     className="project-img-feed"
                     width="200px"
                     src={project.coverImage}
-                  />
+                  /> */
+                  <h3>{project.title}</h3>
                 </Link>
               </div>
             );

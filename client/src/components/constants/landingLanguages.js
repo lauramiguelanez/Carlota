@@ -75,7 +75,7 @@ const actionsENG = [
     "Scrivo "
   ];
   const objectsITA = [
-    "",
+    "testi",
     "la lingua",
     "l'arte",
     "sul genere",
