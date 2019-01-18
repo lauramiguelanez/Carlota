@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import 'variables.scss';
 
 section {
   width: 90vw;
@@ -19,6 +19,10 @@ section {
   font-family: $main-font;
   text-align: center;
   font-size: 3.5rem;
+  color: $landing-color;
+}
+.landing-link {
+  text-decoration: none;
   color: $landing-color;
 }
 
@@ -45,9 +49,14 @@ section {
   font-size: 10px;
   font-weight: 700;
 }
+.landing-area {
+}
+.landing-image {
+  object-fit: cover;
+}
 
 @media only screen and (max-width: 800px) {
-    .landing-text{
-        font-size: 2rem;
-    }
+  .landing-text {
+    font-size: 2rem;
+  }
 }

@@ -3,12 +3,15 @@ import { Switch, Route, BrowserRouter, Router } from 'react-router-dom';
 import './css/App.scss';
 
 import Navbar from './components/Navbar';
+import Navbar2 from './components/Navbar2';
 import LandingAnimation from './components/LandingAnimation';
+import LandingImage from './components/LandingImage';
 import About from './components/About';
 import UploadProject from './components/UploadProject';
 import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Footer from './components/Footer';
+import Footer2 from './components/Footer2';
 import Category from './components/Category';
 
 class App extends Component {
@@ -24,7 +27,7 @@ class App extends Component {
       <duv>
         <div className="App">
           <header className="header">
-            <Navbar />
+            <Navbar2 />
           </header>
           <div className="fix-top" />
           <main>
@@ -38,7 +41,12 @@ class App extends Component {
                     newPage={() => {
                       this.setState({ page: 'Home' });
                     }}
-                  />*/
+                  /> */
+                  <LandingImage
+                    newPage={() => {
+                      this.setState({ page: 'Home' });
+                    }}
+                  />
                   <div className="landing-wrapper">
                     <div className="landing-text">
                       <h1 className="landing-random object" style={{fontSize: "2.5rem"}}>under construction</h1>
@@ -132,7 +140,7 @@ class App extends Component {
           </main>
           <div className="fix-bottom" />
           <footer>
-            <Footer />
+            <Footer2 />
           </footer>
         </div>
       </duv>
