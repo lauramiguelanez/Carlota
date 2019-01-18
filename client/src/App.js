@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter, Router } from 'react-router-dom';
+import { Layout } from 'antd';
+
+import 'antd/dist/antd.css';
+import './css/antMod.scss';
 import './css/App.scss';
 
 import Navbar from './components/Navbar';
@@ -24,7 +28,7 @@ class App extends Component {
 
   render() {
     return (
-      <duv>
+      <div>
         <div className="App">
           <header className="header">
             <Navbar2 />
@@ -133,7 +137,7 @@ class App extends Component {
             <Footer2 />
           </footer>
         </div>
-      </duv>
+      </div>
     );
   }
 }

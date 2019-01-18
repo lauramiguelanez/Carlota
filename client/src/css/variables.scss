@@ -3,7 +3,11 @@ $secondary-color: white;
 $accent-color: pink;
 $background-color: white;
 $landing-color: black;
-
 $main-font: 'Karla', sans-serif;
 
+$link-color:$accent-color;
+
 $nav-height: 60px;
+
+@primary-color:$primary-color;
+@link-color: $link-color;
