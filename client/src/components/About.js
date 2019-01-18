@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "../css/content.scss";
+import React, { Component } from 'react';
+import '../css/content.scss';
 
 export default class About extends Component {
   constructor(props) {
@@ -15,50 +15,42 @@ export default class About extends Component {
 
   render() {
     return (
-      <section>
+      <section><div className="about-area">
         <p>
-          Carlota Mir (b. Carlota Jerez, Spain, 1991) is a curator, researcher,
-          translator and cultural agent currently based in Stockholm, Sweden.
-          Her work, of a multidisciplinary and multilingual nature, interrogates
-          the relationship between gender, sexuality and space in visual
-          culture, design, curating and architecture. Her research and
-          curatorial work focuses particularly on the notion of domesticity as a
-          political arena from a feminist and queer perspective.
+          Hey! I’m Carlota. I work in curating, translating and research. And I also do boring work
+          at home, which I like to think of as self-care.
         </p>
-
+        <p> I work from these fields simultaneously, and I find they often speak to each other.</p>
         <p>
-          Carlota currently combines her work as an independent curator in
-          Stockholm with research work as a participant of the research groups
-          Decolonizing Architecture and R-Lab at the Royal Institute of Art in
-          Stockholm. In September 2016, she moved to Sweden upon receiving a
-          scholarship in cultural programming for the Spanish Agency for
-          International Cooperation and Development (AECID) in Stockholm.
+          I’m keen on making connections between gender, territories, people, affects, spaces, race
+          and sexuality in art, architecture, and basically everywhere, through feminist pedagogies
+          and the curatorial. I like to work with a variety of contexts, from public programmes to
+          publications or spatial interventions/exhibitions.
         </p>
-
         <p>
-          She has curated or is currently curating exhibitions, conferences,
-          editorial work and public programmes for KTH, Kulturhuset, Index
-          Contemporary Arts Foundation, Global Challenges Foundation, EUNIC
-          Stockholm, ETSAM, or Matadero Madrid, amongst others.
+          As a translator, I have been working freelance for a number of years and I love working
+          with texts that have to do with art, culture, politics, journalism, or academia, but adapt
+          to other contexts as well. I’m happy to chat over any questions or requests you may have -
+          just drop me a line!
         </p>
-
         <p>
-          Her individual research work has been published internationally in
-          various academic and independent platforms, such as ETSAM Madrid,
-          Orlando Magazine, and Universidad Autónoma de Madrid. Her work as part
-          of the curatorial team of the architectural platform 255 will be
-          exhibited at the Spanish Pavilion of the 2018 Venice Architecture
-          Biennale and has been exhibited at the Istanbul Biennial of Design,
-          Museo Reina Sofía, COAM, or Matadero Madrid, amongst others.
+          I like to move. I’m currently based in Stockholm, Sweden, though I have been based in the
+          UK, France and Spain before.
         </p>
-
         <p>
-          Carlota graduated from her BA in Art History and French with Study
-          Abroad Year in 2013 (University of Sussex, Great Britain/Paris
-          Sorbonne IV, France) and she holds an MA in Contemporary Art and
-          Visual Culture from Universidad Autónoma de Madrid/Museo Nacional
-          Reina Sofia.
+          I’m currently working independently and doing research at the Stockholm Royal Institute of
+          Arts. As a curator or editor, I am or have been involved with institutions like Moderna
+          Museet, C2M, Kulturhuset, Index Contemporary Arts Foundation, EUNIC Stockholm, KTH/ KKH,
+          Global Challenges Foundation, ETSAM, or Matadero Madrid, as well as with a bunch of
+          independent and self managed projects.
         </p>
+        <p>
+          I graduated from my BA in Art History and French in 2013 (University of Sussex, Great
+          Britain/Paris Sorbonne IV, France) and I hold an MA in Contemporary Art and Visual Culture
+          from Universidad Autónoma de Madrid/Museo Nacional Reina Sofia and Post MA in
+          Architectural History and Theory from Stockholm’s Royal Institute of Arts.
+        </p>
+        </div>
       </section>
     );
   }
