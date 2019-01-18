@@ -37,21 +37,11 @@ class App extends Component {
                 exact
                 path="/"
                 render={() => (
-                  /* <LandingAnimation
-                    newPage={() => {
-                      this.setState({ page: 'Home' });
-                    }}
-                  /> */
                   <LandingImage
                     newPage={() => {
                       this.setState({ page: 'Home' });
                     }}
                   />
-                  <div className="landing-wrapper">
-                    <div className="landing-text">
-                      <h1 className="landing-random object" style={{fontSize: "2.5rem"}}>under construction</h1>
-                  </div>
-                  </div>
                 )}
               />
               <Route
