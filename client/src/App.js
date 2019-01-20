@@ -32,7 +32,7 @@ class App extends Component {
       <div>
         <div className="App">
           <header className="header">
-            <Navbar2 />
+            <Navbar />
           </header>
           {/* <div className="fix-top" /> */}
           <main>
@@ -65,7 +65,7 @@ class App extends Component {
                 exact
                 path="/curating"
                 render={() => (
-                  <Category
+                  <ProjectsStrip
                     category={'curating'}
                     newPage={() => {
                       this.setState({ page: 'Curating' });
@@ -77,7 +77,7 @@ class App extends Component {
                 exact
                 path="/translation"
                 render={() => (
-                  <Category
+                  <ProjectsStrip
                     category={'translation'}
                     newPage={() => {
                       this.setState({ page: 'Translation' });
@@ -89,7 +89,7 @@ class App extends Component {
                 exact
                 path="/research"
                 render={() => (
-                  <Category
+                  <ProjectsStrip
                     category={'research'}
                     newPage={() => {
                       this.setState({ page: 'Research' });
@@ -109,7 +109,7 @@ class App extends Component {
                   />
                 )}
               />
-              /* <Route
+              <Route
                 exact
                 path="/projectsgrid"
                 render={() => (
@@ -119,7 +119,7 @@ class App extends Component {
                     }}
                   />
                 )}
-              /> */
+              />
               <Route
                 exact
                 path="/projects"
@@ -147,7 +147,7 @@ class App extends Component {
           </main>
           {/* <div className="fix-bottom" /> */}
           <footer>
-            <Footer2 />
+            <Footer/>
           </footer>
         </div>
       </div>
