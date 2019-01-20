@@ -73,7 +73,7 @@ export default class ProjectsStrip extends Component {
   };
 
   showImg(e, project) {
-    console.log(e,project);
+    console.log(project);
     this.setState({currentProject: project})
   }
 
@@ -99,6 +99,9 @@ export default class ProjectsStrip extends Component {
                   <Link to={`/project/${project._id}`}>
                     {/* <img className="project-img-list" width="200px" src={project.coverImage} /> */}
                     <h3>{project.title}</h3>
+                    <h2>{project.context}</h2>
+                    <p>{project.tagsTopic}</p>
+                    <p>{project.tagsFormat}</p>
                   </Link>
                 </div>
               );

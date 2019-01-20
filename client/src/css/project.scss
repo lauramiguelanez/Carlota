@@ -1,28 +1,55 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+$display-height: 70vh ; 
+
 .projects-list {
   display: block;
-  /* flex-direction: row;
-  flex-wrap: nowrap; */
-  // margin: 0 35px;
   height: 20vh;
   overflow: auto;
   white-space: nowrap;
 }
+
 .project-in-list {
   display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   align-self: center;
   width: 400px;
   height: 20vh;
-  // margin: 0 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 5px;
-  // overflow: hidden;
-  border: 1px solid black;
+  padding: 5px 10px;
+  // border: 1px solid black;
+  h3,
+  h2,
+  p {
+    text-decoration: none;
+    color: $primary-color;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  h3 {
+    font-size: 2em;
+  }
+  h2{
+    font-size: 1.2em;
+  }
 }
+
+.project-img-wrapper {
+  display: flex;
+  height: $display-height;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
 .project-img-list {
-  object-fit: cover;
-  // width: 400px;
-  height: 60vh;
-  // align-content: center;
-  // border-radius: 10vw;
+  display: inline-block;
+  margin: auto;
+  justify-self: center;
+  align-self: center;
+  max-height: $display-height;
+  max-width: 100%;
 }
