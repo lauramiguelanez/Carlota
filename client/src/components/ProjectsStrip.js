@@ -11,7 +11,7 @@ export default class ProjectsStrip extends Component {
     super(props);
     this.state = {
       loggedInUser: null,
-      category: this.props.category
+      category: this.props.category,
     };
     this.service = axios.create({
       baseURL: `${process.env.REACT_APP_API_URL}/api`
@@ -72,24 +72,38 @@ export default class ProjectsStrip extends Component {
     }
   };
 
+  showImg(e, project) {
+    console.log(e,project);
+    this.setState({currentProject: project})
+  }
+
+  hideImg(e, project) {}
+
   render() {
     let projects = this.state.projectArr;
 
     if (projects) {
       projects.forEach(e => {});
       return (
-        <section className="projects-list">
-          {/* <ImageDisplay /> */}
-          {projects.map(project => {
-            return (
-              <div key={project._id} className="project-in-list">
-                <Link to={`/project/${project._id}`}>
-                  {/* <img className="project-img-list" width="200px" src={project.coverImage} /> */}
-                  <h3>{project.title}</h3>
-                </Link>
-              </div>
-            );
-          })}
+        <section>
+          <ImageDisplay project={this.state.currentProject? this.state.currentProject : projects[0]}/>
+          <div className="projects-list">
+            {projects.map(project => {
+              return (
+                <div
+                  key={project._id}
+                  className="project-in-list"
+                  onMouseEnter={e => this.showImg(e, project)}
+                  onMouseLeave={e => this.hideImg(e, project)}
+                >
+                  <Link to={`/project/${project._id}`}>
+                    {/* <img className="project-img-list" width="200px" src={project.coverImage} /> */}
+                    <h3>{project.title}</h3>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </section>
       );
     } else {

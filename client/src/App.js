@@ -34,7 +34,7 @@ class App extends Component {
           <header className="header">
             <Navbar2 />
           </header>
-          <div className="fix-top" />
+          {/* <div className="fix-top" /> */}
           <main>
             <Switch>
               <Route
@@ -145,7 +145,7 @@ class App extends Component {
               />
             </Switch>
           </main>
-          <div className="fix-bottom" />
+          {/* <div className="fix-bottom" /> */}
           <footer>
             <Footer2 />
           </footer>

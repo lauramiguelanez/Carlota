@@ -21,6 +21,7 @@ export default class LandingImage extends Component {
   render() {
     return (
       <section>
+      <div className="fix-top" />
         <div
           className="landing-wrapper landing-area"
           onMouseEnter={e => this.showText(e)}
@@ -33,6 +34,7 @@ export default class LandingImage extends Component {
             {this.state.isHover}
           </a>
         </div>
+        <div className="fix-bottom" />
       </section>
     );
   }

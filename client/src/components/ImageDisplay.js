@@ -6,15 +6,22 @@ export default class ImageDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedInUser: null
+      loggedInUser: null,
+      project: this.props.project,
     };
+  }
+  
+  componentWillReceiveProps(nextProps) {
+    this.setState({ ...this.state, project: nextProps['project'] });
   }
 
   render() {
+    let images = this.props.project.images;
     return (
-      <div>
+      <div className=".ant-carousel .slick-slide">
         <Carousel autoplay>
-          <div>
+        {images.map(image => <div><img src={image} className="project-img-list"></img></div>)}
+          {/* <div>
             <h3>1</h3>
           </div>
           <div>
@@ -25,7 +32,7 @@ export default class ImageDisplay extends Component {
           </div>
           <div>
             <h3>4</h3>
-          </div>
+          </div> */}
         </Carousel>
       </div>
     );
