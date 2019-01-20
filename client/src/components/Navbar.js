@@ -9,6 +9,7 @@ export default class Navbar extends Component {
   }
 
   render() {
+    
     return (
       <nav className="nav-style" id="top-nav" role="navigation">
         <div className="nav-width">

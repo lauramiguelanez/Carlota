@@ -21,7 +21,7 @@ const projectSchema = new Schema({
   externalLink: [],
   authorship: {
     type: String,
-    enum : ['INDIVIDUAL', 'COLLECTIVE', 'TRANSLATOR'],
+    enum : ['INDIVIDUAL', 'COLLECTIVE', 'TRANSLATION'],
     default : 'INDIVIDUAL'
   },
 }, {

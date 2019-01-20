@@ -31,6 +31,20 @@ export default class Category extends Component {
   };
 
   filterProjects(category) {}
+  getAboutCategory(){
+    if (this.state.category=="TRANSLATION"){
+      return(<div>{`Translation	
+        I have 5 years’ experience in freelance translation work within cultural and academic contexts, both in the private and public sectors. I work across fields like architecture, art history, humanities, politics, journalism or digital communications. I have worked with clients like Matadero Madrid, ETSAM, Migrant Journal, UGR, Juan Herreros Studio, Lluis Alexandre Casanovas Studio, Cadena Ser, FilmAffinity, or Ed. Traficantes de Sueños.	 
+        I also carry out proofreading and editing work of original texts and translations.	
+          
+        <<<<< I work from English, Spanish, French, Italian and Catalan 	
+        >>>>> into English and Spanish.	
+        Just drop me a line with any general questions, suggestions, or if you want to have a chat about a project in particular!	
+        Full translation CV available upon request`}</div>)
+    } else {
+      return <div/>
+    }
+  }
 
   getProjects = category => {
     let projects;
@@ -53,7 +67,7 @@ export default class Category extends Component {
           {projects.map(project => {
             return (
               <div>
-              {/* <ProjectDetail id={this.state.selectedProj}</ProjectDetail> */}
+              {this.getAboutCategory()}
                 <div key={project._id} className="project-in-feed">
                   <Link to={`/project/${project._id}`}>
                     <img className="project-img-feed" width="200px" src={project.coverImage} />
