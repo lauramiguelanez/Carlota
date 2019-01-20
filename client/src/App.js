@@ -13,6 +13,7 @@ import LandingImage from './components/LandingImage';
 import About from './components/About';
 import UploadProject from './components/UploadProject';
 import Projects from './components/Projects';
+import ProjectsStrip from './components/ProjectsStrip';
 import ProjectDetail from './components/ProjectDetail';
 import Footer from './components/Footer';
 import Footer2 from './components/Footer2';
@@ -110,11 +111,23 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/projects"
+                path="/projectsgrid"
                 render={() => (
                   <Projects
                     newPage={() => {
                       this.setState({ page: 'Projects' });
+                    }}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/projects"
+                render={() => (
+                  <ProjectsStrip
+                  category={'curating'}
+                    newPage={() => {
+                      this.setState({ page: 'ProjectsStrip' });
                     }}
                   />
                 )}

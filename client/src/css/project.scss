@@ -1,0 +1,27 @@
+.projects-list {
+  display: block;
+  /* flex-direction: row;
+  flex-wrap: nowrap; */
+  margin: 0 35px;
+  height: 220px;
+  overflow: auto;
+  white-space: nowrap;
+}
+.project-in-list {
+  display: inline-block;
+  align-self: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  // overflow: hidden;
+  border: 1px solid black;
+}
+.project-img-list {
+  object-fit: cover;
+  width: 400px;
+  height: 200px;
+  // align-content: center;
+  // border-radius: 10vw;
+}

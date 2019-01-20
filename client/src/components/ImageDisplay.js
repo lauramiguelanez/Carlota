@@ -1,4 +1,6 @@
+import React, { Component } from 'react';
 import { Carousel } from 'antd';
+import '../css/antMod.scss';
 
 export default class ImageDisplay extends Component {
   constructor(props) {
