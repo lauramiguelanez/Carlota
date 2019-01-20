@@ -109,7 +109,7 @@ class App extends Component {
                   />
                 )}
               />
-              <Route
+              /* <Route
                 exact
                 path="/projectsgrid"
                 render={() => (
@@ -119,7 +119,7 @@ class App extends Component {
                     }}
                   />
                 )}
-              />
+              /> */
               <Route
                 exact
                 path="/projects"
