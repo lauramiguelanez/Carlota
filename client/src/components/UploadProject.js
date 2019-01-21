@@ -39,7 +39,7 @@ export default class UploadProject extends Component {
       .catch(error => console.log(error));
   }
 
-  createProject = (
+  createProject(
     image_url,
     title,
     subtitle,
@@ -52,7 +52,7 @@ export default class UploadProject extends Component {
     tagsFormat,
     description,
     authorship
-  ) => {
+  ){
     //faltan demas datos
     let project = {
       coverImage: image_url,

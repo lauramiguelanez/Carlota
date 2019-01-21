@@ -18,6 +18,7 @@ import ProjectDetail from './components/ProjectDetail';
 import Footer from './components/Footer';
 import Footer2 from './components/Footer2';
 import Category from './components/Category';
+import EditProject from './components/EditProject';
 
 class App extends Component {
   constructor() {
@@ -138,6 +139,18 @@ class App extends Component {
                   <ProjectDetail
                     newPage={() => {
                       this.setState({ page: 'ProjectDetail' });
+                    }}
+                    editMode={false}
+                    {...props}
+                  />
+                )}
+              />
+              <Route
+                path="/editproject/:id"
+                render={props => (
+                  <EditProject
+                    newPage={() => {
+                      this.setState({ page: 'EditProject' });
                     }}
                     {...props}
                   />

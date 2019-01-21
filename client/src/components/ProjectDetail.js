@@ -8,7 +8,8 @@ export default class ProjectDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedInUser: null
+      loggedInUser: null,
+      editMode: false
     };
     this.service = axios.create({
       baseURL: `${process.env.REACT_APP_API_URL}/api`
@@ -40,6 +41,7 @@ export default class ProjectDetail extends Component {
 
   componentDidMount = () => {
     this.props.newPage();
+    this.setState({ editMode: this.props.editMode });
     let id;
     if (this.props.id) {
       id = this.props.id;
@@ -48,6 +50,16 @@ export default class ProjectDetail extends Component {
     } else this.setState({ projectID: id });
     this.getProject(id);
   };
+
+  getEditButton() {
+    if (this.state.editMode === true) {
+      return (
+        <Link to={`/editproject/${this.props.id}`}>
+          <button>EDIT</button>
+        </Link>
+      );
+    }
+  }
 
   render() {
     let {
@@ -63,7 +75,7 @@ export default class ProjectDetail extends Component {
       authorship
     } = this.state;
 
-    let year = date? new Date(date).getFullYear() : "";
+    let year = date ? new Date(date).getFullYear() : '';
 
     return (
       <section className="project-detail">
@@ -72,9 +84,14 @@ export default class ProjectDetail extends Component {
         <p className="project-author">Authorship: {authorship}</p>
         <h3 lassName="project-context">{context}</h3>
         <img className="project-img" src={coverImage} alt={title} />
-        <p className="project-description" >{description}</p>
-        <h3 className="project-category">{category} - {year}</h3>
-        <p className="project-tags">{tagsTopic}, {tagsFormat}</p>
+        <p className="project-description">{description}</p>
+        <h3 className="project-category">
+          {category} - {year}
+        </h3>
+        <p className="project-tags">
+          {tagsTopic}, {tagsFormat}
+        </p>
+        {this.getEditButton()}
       </section>
     );
   }
