@@ -62,6 +62,7 @@ export default class ProjectDetail extends Component {
       description,
       authorship
     } = this.state;
+    
 
     let year = date? new Date(date).getFullYear() : "";
 
