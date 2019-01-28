@@ -30,8 +30,9 @@
 .project-detail {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: center;
+  overflow: scroll;
+  // flex-wrap: nowrap;
+  // align-content: center;
 }
 .projects-title {
   font-size: 15px;
@@ -47,6 +48,7 @@
 }
 .project-img {
   object-fit: contain;
+  display: inline;
   max-width: 40vw;
   max-height: 40vw;
   align-self: center;

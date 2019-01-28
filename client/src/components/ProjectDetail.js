@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import ImageDisplay from './ImageDisplay';
 require('dotenv').config();
 //import "../css/project.scss";
 
@@ -61,6 +62,15 @@ export default class ProjectDetail extends Component {
     }
   }
 
+  renderImgs(images) {
+    if (images) {
+      return images.map(imageSrc => {
+        console.log(imageSrc);
+        return <img className="project-img" src={imageSrc} />;
+      });
+    }
+  }
+
   render() {
     let {
       coverImage,
@@ -72,7 +82,8 @@ export default class ProjectDetail extends Component {
       tagsTopic,
       tagsFormat,
       description,
-      authorship
+      authorship,
+      images
     } = this.state;
 
     let year = date ? new Date(date).getFullYear() : '';
@@ -86,11 +97,12 @@ export default class ProjectDetail extends Component {
         <img className="project-img" src={coverImage} alt={title} />
         <p className="project-description">{description}</p>
         <h3 className="project-category">
-          {category} - {year}
+        {category} - {year}
         </h3>
         <p className="project-tags">
-          {tagsTopic}, {tagsFormat}
+        {tagsTopic}, {tagsFormat}
         </p>
+        {/* this.renderImgs(images) */}
         {this.getEditButton()}
       </section>
     );
