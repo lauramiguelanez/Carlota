@@ -7,16 +7,18 @@ export default class ImageDisplay extends Component {
     super(props);
     this.state = {
       loggedInUser: null,
-      project: this.props.project
+      project: this.props.project,
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ ...this.state, project: nextProps['project'] });
+    this.setState({ ...this.state, project: nextProps['project']});
   }
   
-  showDescription(e, project) {
-    console.log(e, project);
+  showDescription(e) {
+    if (this.props.project){
+      console.log(e, this.props.project);
+    }
   }
 
   hideDescription(e, project) {}
@@ -135,16 +137,25 @@ export default class ImageDisplay extends Component {
     }
   }
 
-  showContent(data) {
+  showContent() {
     if (this.props.project === null) {
       this.getAboutCategory();
-    } else {
+    } else if (this.props.project){
+      console.log('project', this.props.project, this.state.project)
       let images = this.props.project.images;
-      return images.map(image => (
-        <div className="project-img-wrapper">
-          <img src={image} className="project-img-list" />
-        </div>
-      ));
+      if(this.props.isDetail){
+        return images.map(image => (
+          <div className="project-img-wrapper-detail">
+            <img src={image} className="project-img-list" />
+          </div>
+        ));
+      } else {
+        return images.map(image => (
+          <div className="project-img-wrapper-detail">
+            <img src={image} className="project-img-list" />
+          </div>
+        ));
+      }
     }
   }
 
@@ -154,10 +165,10 @@ export default class ImageDisplay extends Component {
         <Carousel
           autoplay
           style={'display: flex'}
-          onMouseEnter={e => this.showDescription(e, this.props.project)}
-          onMouseLeave={e => this.hideDescription(e, this.props.project)}
+          onMouseEnter={e => this.showDescription()}
+          onMouseLeave={e => this.hideDescription()}
         >
-          {this.showContent(this.props.project)}
+          {this.showContent()}
         </Carousel>
       </div>
     );

@@ -33,7 +33,8 @@ export default class ProjectDetail extends Component {
           tagsFormat: project.data.tagsFormat,
           description: project.data.description,
           externalLink: project.data.externalLink,
-          authorship: project.data.authorship
+          authorship: project.data.authorship, 
+          project: project.data,
         });
       })
       .then(() => console.log(this.state))
@@ -71,6 +72,19 @@ export default class ProjectDetail extends Component {
     }
   }
 
+  getDescriptions(category){
+    console.log("getDescription", category);
+    if (category == 'TRANSLATION'){
+      return (<div>
+        <p>{this.state.textOriginal}</p>
+        <p>{this.state.textTranslated}</p>
+        <p>{this.state.textNotes}</p>
+        </div>)
+    }else{
+      return <p>{this.state.description}</p> 
+    }
+  }
+
   render() {
     let {
       coverImage,
@@ -78,12 +92,12 @@ export default class ProjectDetail extends Component {
       subtitle,
       date,
       context,
+      collaboratingEntitites,
+      organiser,
       category,
       tagsTopic,
       tagsFormat,
-      description,
       authorship,
-      images
     } = this.state;
 
     let year = date ? new Date(date).getFullYear() : '';
@@ -93,9 +107,12 @@ export default class ProjectDetail extends Component {
         <h1 className="project-title">{title}</h1>
         <h2 className="project-subtitle">{subtitle}</h2>
         <p className="project-author">Authorship: {authorship}</p>
-        <h3 lassName="project-context">{context}</h3>
-        <img className="project-img" src={coverImage} alt={title} />
-        <p className="project-description">{description}</p>
+        <h3 className="project-context">{context}</h3>
+        <p className="project-context">{organiser}</p>
+        <p className="project-context">{collaboratingEntitites}</p>
+        {/* <img className="project-img" src={coverImage} alt={title} /> */}
+        <ImageDisplay project={this.state.project} category={category} isDetail={true}/>
+        {this.getDescriptions(category)}
         <h3 className="project-category">
         {category} - {year}
         </h3>
@@ -103,7 +120,7 @@ export default class ProjectDetail extends Component {
         {tagsTopic}, {tagsFormat}
         </p>
         {/* this.renderImgs(images) */}
-        {this.getEditButton()}
+        {/* this.getEditButton() */}
       </section>
     );
   }

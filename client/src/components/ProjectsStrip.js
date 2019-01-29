@@ -106,7 +106,10 @@ export default class ProjectsStrip extends Component {
       projects.forEach(e => {});
       return (
         <section>
-          <ImageDisplay project={this.state.currentProject? this.state.currentProject : projects[0]} category={this.state.category}/>
+          <div className="strip-top">
+            {this.getAboutCategory}
+          <ImageDisplay project={this.state.currentProject? this.state.currentProject : projects[0]} category={this.state.category} isDetail={false}/>
+          </div>
           <div className="projects-list">
             {projects.map(project => {
               return (
@@ -117,7 +120,6 @@ export default class ProjectsStrip extends Component {
                   onMouseLeave={e => this.hideImg(e, project)}
                 >
                   <Link to={`/project/${project._id}`}>
-                    {/* <img className="project-img-list" width="200px" src={project.coverImage} /> */}
                     <h3>{project.title}</h3>
                     <h2>{project.context}</h2>
                     <p>{project.tagsTopic}</p>

@@ -27,7 +27,7 @@ const projectCRUD = (Project, extensionFn) => {
 	});
 	
 	router.get('/translation', (req, res, next) => {
-        Project.find({ category: 'TRASLATION' })
+        Project.find({ category: 'TRANSLATION' })
             .then(obj => res.status(200).json(obj))
             .catch(e => next(e));
 	});

@@ -53,3 +53,23 @@ $display-height: 70vh ;
   max-height: $display-height;
   max-width: 100%;
 }
+
+.project-img-wrapper-detail {
+  display: flex;
+  height: 40vh;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+
+.project-img-list-detail {
+  display: inline-block;
+  margin: auto;
+  justify-self: center;
+  align-self: center;
+  max-height: 40vh;
+  max-width: 100%;
+}
+
+

@@ -19,11 +19,10 @@ const projectSchema = new Schema({
   tagsTopic: [],
   tagsFormat: [],
   externalLink: [],
-  authorship: {
-    type: String,
-    enum : ['INDIVIDUAL', 'COLLECTIVE', 'TRANSLATION'],
-    default : 'INDIVIDUAL'
-  },
+  authorship: String,
+  textOriginal: String,
+  textTranslated: String,
+  textNotes: String,
 }, {
   timestamps: {
     createdAt: 'created_at',
