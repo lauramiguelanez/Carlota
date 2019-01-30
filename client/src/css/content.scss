@@ -70,10 +70,17 @@
   color: red;
 }
 
+.about-section{
+  display: flex;
+}
 .about-area {
   max-width: 900px;
   margin: auto;
   width: 90vw;
   display: flex;
   flex-direction: column;
+  justify-self: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
 }

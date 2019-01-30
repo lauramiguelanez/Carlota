@@ -15,7 +15,7 @@ export default class About extends Component {
 
   render() {
     return (
-      <section><div className="about-area">
+      <section className="about-section"><div className="about-area">
         <p>
           Hey! I’m Carlota. I work in curating, translating and research. And I also do boring work
           at home, which I like to think of as self-care.
