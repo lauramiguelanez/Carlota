@@ -27,9 +27,9 @@ export default class ProjectsStrip extends Component {
 
   componentDidMount = () => {
     this.props.newPage();
-    console.log(this.props.category);
+    // console.log(this.props.category);
     this.setState({ category: this.props.category });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   filterProjects(category) {}
@@ -156,7 +156,7 @@ export default class ProjectsStrip extends Component {
         .get(`/project/${category}`)
         .then(projs => {
           projects = projs.data;
-          console.log(projects);
+          // console.log(projects);
           this.setState({ projectArr: projects });
         })
         .catch(error => console.log(error));
@@ -165,7 +165,7 @@ export default class ProjectsStrip extends Component {
         .get('/project')
         .then(projs => {
           projects = projs.data;
-          console.log(projects);
+          // console.log(projects);
           this.setState({ projectArr: projects });
         })
         .catch(error => console.log(error));
@@ -173,7 +173,7 @@ export default class ProjectsStrip extends Component {
   };
 
   showImg(e, project) {
-    console.log(project);
+    // console.log(project);
     this.setState({ currentProject: project });
   }
 

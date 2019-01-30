@@ -91,7 +91,7 @@ export default class ProjectDetail extends Component {
           <p>{this.state.textOriginal}</p>
           <h3>Translated text:</h3>
           <p>{this.state.textTranslated}</p>
-          <h4>Notes:</h4>
+          <h4>---</h4>
           <p>{this.state.textNotes}</p>
         </div>
       );
