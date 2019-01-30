@@ -1,24 +1,52 @@
 @import 'variables.scss';
 @import 'mixins.scss';
 
-$display-height: 70vh ; 
+$display-height: 72vh ; 
 
-.projects-list {
-  display: block;
-  height: 20vh;
-  overflow: auto;
+
+.project-section{
+  // height: 90vh;
+  overflow: scroll;
+ /*  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; */
+  top: $nav-height;
+}
+
+.strip-category{
+  width: 100vw;
+  // height: 25vh;
+}
+.category-about{
+  width: 100vh;
+  margin: 20px auto;
+  white-space: initial;
+}
+
+.projects-strip-bottom {
+  display: flex;
+  height: 30vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
   white-space: nowrap;
+  // align-self: flex-end;
+  // justify-self: end;
+  width: 100vw;
+  margin-top: 30px;
+  // border: 1px solid black;
+  align-content: flex-end;
 }
 
 .project-in-list {
   display: inline-block;
+  margin-top: 7vh;
+  height: 23vh;
   text-overflow: ellipsis;
   white-space: nowrap;
-  align-self: center;
   width: 400px;
-  height: 20vh;
   padding: 5px 10px;
   // border: 1px solid black;
+  top: 0;
   h3,
   h2,
   p {
@@ -26,6 +54,7 @@ $display-height: 70vh ;
     color: $primary-color;
     display: block;
     text-overflow: ellipsis;
+    // white-space: nowrap;
     white-space: nowrap;
     overflow: hidden;
   }
@@ -52,24 +81,42 @@ $display-height: 70vh ;
   align-self: center;
   max-height: $display-height;
   max-width: 100%;
+  align-items: flex-end;
+}
+
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  width: 100vw;
+  // height: 90vh;
+  padding-left: 50px;
+  padding-right: 50px;
+  // align-self: flex-start;
+  // flex-wrap: nowrap;
+  // align-content: center;
 }
 
 .project-img-wrapper-detail {
   display: flex;
-  height: 40vh;
+  height: auto;
+  padding: 20px;
   width: 100%;
-  align-content: center;
-  justify-content: center;
+  align-items: center;
+  /* align-content: center;
+  justify-content: center; */
 }
 
 
 .project-img-list-detail {
-  display: inline-block;
-  margin: auto;
+  // display: inline-block;
   justify-self: center;
   align-self: center;
-  max-height: 40vh;
-  max-width: 100%;
+  // max-height: 40vh;
+  // smax-width: 500%;
 }
 
 
+.strip-top{
+
+}

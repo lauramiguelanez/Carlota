@@ -27,16 +27,9 @@
   overflow: hidden;
 } 
 
-.project-detail {
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  // flex-wrap: nowrap;
-  // align-content: center;
-}
+
 .projects-title {
   font-size: 15px;
-  text-align: center;
   text-align: center;
 }
 .project-description {
@@ -69,9 +62,18 @@
   text-align: center;
 }
 
+.selected-project{
+  color: red;
+}
 
+.unselected-project{
+  color: red;
+}
 
 .about-area {
   max-width: 900px;
-  align-self: center;
+  margin: auto;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
 }

@@ -20,7 +20,7 @@ export default class LandingImage extends Component {
 
   render() {
     return (
-      <section>
+      <section className="landing-section">
       <div className="fix-top" />
         <div
           className="landing-wrapper landing-area"

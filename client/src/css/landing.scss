@@ -1,8 +1,14 @@
 @import 'variables.scss';
 
 section {
+  width: 100vw;
+} 
+
+.landing-section{
+
   width: 90vw;
   display: flex;
+  margin: auto;
   flex-direction: column;
   align-content: center;
   justify-content: center;

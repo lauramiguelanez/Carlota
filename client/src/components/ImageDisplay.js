@@ -7,17 +7,17 @@ export default class ImageDisplay extends Component {
     super(props);
     this.state = {
       loggedInUser: null,
-      project: this.props.project,
+      project: this.props.project
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ ...this.state, project: nextProps['project']});
+    this.setState({ ...this.state, project: nextProps['project'] });
   }
-  
+
   showDescription(e) {
-    if (this.props.project){
-      console.log(e, this.props.project);
+    if (this.props.project) {
+      // console.log(e, this.props.project);
     }
   }
 
@@ -140,21 +140,27 @@ export default class ImageDisplay extends Component {
   showContent() {
     if (this.props.project === null) {
       this.getAboutCategory();
-    } else if (this.props.project){
-      console.log('project', this.props.project, this.state.project)
+    } else if (this.props.project) {
+      console.log('project', this.props.project, this.state.project);
       let images = this.props.project.images;
-      if(this.props.isDetail){
-        return images.map(image => (
-          <div className="project-img-wrapper-detail">
-            <img src={image} className="project-img-list" />
-          </div>
-        ));
+      if (this.props.isDetail) {
+        if (images) {
+          console.log('images', images);
+          return images.map(image => (
+            <div className="project-img-wrapper-detail">
+              <img src={image} className="project-img-list" />
+            </div>
+          ));
+        }
       } else {
-        return images.map(image => (
-          <div className="project-img-wrapper-detail">
-            <img src={image} className="project-img-list" />
-          </div>
-        ));
+        if (images) {
+          console.log('images', images);
+          return images.map(image => (
+            <div className="project-img-wrapper-detail">
+              <img src={image} className="project-img-list" />
+            </div>
+          ));
+        }
       }
     }
   }

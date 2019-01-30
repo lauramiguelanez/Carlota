@@ -77,7 +77,7 @@ export default class LandingAnimation extends Component {
     let object = this.state.object;
 
     return (
-      <section>
+      <section className="landing-section">
         <div className="landing-wrapper">
           <div className="landing-text" onMouseOver={e => this.changeLang(e)}>
             <p className="landing-random action">{action}</p>

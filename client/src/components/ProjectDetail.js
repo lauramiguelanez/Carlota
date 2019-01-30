@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Row, Col } from 'antd';
 import axios from 'axios';
 import ImageDisplay from './ImageDisplay';
 require('dotenv').config();
@@ -33,8 +34,11 @@ export default class ProjectDetail extends Component {
           tagsFormat: project.data.tagsFormat,
           description: project.data.description,
           externalLink: project.data.externalLink,
-          authorship: project.data.authorship, 
-          project: project.data,
+          authorship: project.data.authorship,
+          textOriginal: project.data.textOriginal,
+          textTranslated: project.data.textTranslated,
+          textNotes: project.data.textNotes,
+          project: project.data
         });
       })
       .then(() => console.log(this.state))
@@ -66,22 +70,33 @@ export default class ProjectDetail extends Component {
   renderImgs(images) {
     if (images) {
       return images.map(imageSrc => {
-        console.log(imageSrc);
+        // console.log(imageSrc);
         return <img className="project-img" src={imageSrc} />;
       });
     }
   }
 
-  getDescriptions(category){
-    console.log("getDescription", category);
-    if (category == 'TRANSLATION'){
-      return (<div>
-        <p>{this.state.textOriginal}</p>
-        <p>{this.state.textTranslated}</p>
-        <p>{this.state.textNotes}</p>
-        </div>)
-    }else{
-      return <p>{this.state.description}</p> 
+  getDescriptions(category) {
+    console.log('getDescription', category);
+    if (category === 'TRANSLATION') {
+      console.log(
+        'trans',
+        this.state.textOriginal,
+        this.state.textTranslated,
+        this.state.textNotes
+      );
+      return (
+        <div>
+        <h3>Original text:</h3>
+          <p>{this.state.textOriginal}</p>
+          <h3>Translated text:</h3>
+          <p>{this.state.textTranslated}</p>
+          <h4>Notes:</h4>
+          <p>{this.state.textNotes}</p>
+        </div>
+      );
+    } else {
+      return <p>{this.state.description}</p>;
     }
   }
 
@@ -97,7 +112,7 @@ export default class ProjectDetail extends Component {
       category,
       tagsTopic,
       tagsFormat,
-      authorship,
+      authorship
     } = this.state;
 
     let year = date ? new Date(date).getFullYear() : '';
@@ -111,13 +126,18 @@ export default class ProjectDetail extends Component {
         <p className="project-context">{organiser}</p>
         <p className="project-context">{collaboratingEntitites}</p>
         {/* <img className="project-img" src={coverImage} alt={title} /> */}
-        <ImageDisplay project={this.state.project} category={category} isDetail={true}/>
-        {this.getDescriptions(category)}
+        <Row>
+          <Col span={12}>
+            <ImageDisplay project={this.state.project} category={category} isDetail={true} />
+          </Col>
+          <Col span={12}>{this.getDescriptions(category)}</Col>
+        </Row>
+
         <h3 className="project-category">
-        {category} - {year}
+          {category} - {year}
         </h3>
         <p className="project-tags">
-        {tagsTopic}, {tagsFormat}
+          {tagsTopic}, {tagsFormat}
         </p>
         {/* this.renderImgs(images) */}
         {/* this.getEditButton() */}
