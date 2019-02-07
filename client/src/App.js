@@ -33,7 +33,7 @@ class App extends Component {
       <div>
         <div className="App">
           <header className="header">
-            <Navbar />
+            <Navbar2 />
           </header>
           {/* <div className="fix-top" /> */}
           <main>
@@ -160,7 +160,7 @@ class App extends Component {
           </main>
           {/* <div className="fix-bottom" /> */}
           <footer>
-            <Footer/>
+            <Footer2/>
           </footer>
         </div>
       </div>
